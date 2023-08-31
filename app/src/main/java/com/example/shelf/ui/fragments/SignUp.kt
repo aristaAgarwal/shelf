@@ -1,5 +1,6 @@
 package com.example.shelf.ui.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -14,6 +15,7 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.example.shelf.R
 import androidx.fragment.app.viewModels
+import com.example.shelf.constant.AppPreferences
 import com.example.shelf.databinding.FragmentSignUpBinding
 import com.example.shelf.ui.activities.MainActivity
 import com.example.shelf.viewModel.mainViewModel
@@ -33,9 +35,10 @@ class SignUp : Fragment() {
         checkPassword()
         getCountries()
         binding.registerBtn.setOnClickListener {
+            AppPreferences(requireContext()).setPass(binding.newPassConf.text.toString())
+            AppPreferences(requireContext()).setUsername(binding.newName.text.toString())
             val intent = Intent(context, MainActivity::class.java)
             startActivity(intent)
-            activity?.finish()
             activity?.finish()
         }
     }

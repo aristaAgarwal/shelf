@@ -25,7 +25,8 @@ import java.text.DecimalFormat
 class BooksAdapter(
     var context: Context,
     var product: List<ShelfDOItem>,
-    var onAppLinkClick: AppLinkClick
+    var onAppLinkClick: AppLinkClick,
+    var getFav: GetFav
 ) : RecyclerView.Adapter<BooksAdapter.RACItemHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -57,8 +58,10 @@ class BooksAdapter(
             hits.text = "Hits: " + product.hits
             Log.e("CartAdapter", product.toString())
             star.setOnCheckedChangeListener{compoundButton, isChecked ->
-                if (isChecked)
+                if (isChecked) {
                     star.setTextColor(Color.BLUE)
+                }
+                getFav.onclickFav(product, isChecked)
             }
             bookItem.setOnClickListener {
                 onAppLinkClick.onAppLinkClicked(product)
@@ -84,5 +87,8 @@ class BooksAdapter(
 
     interface AppLinkClick {
         fun onAppLinkClicked(p: ShelfDOItem)
+    }
+    interface GetFav {
+        fun onclickFav(p: ShelfDOItem, isChecked: Boolean)
     }
 }
