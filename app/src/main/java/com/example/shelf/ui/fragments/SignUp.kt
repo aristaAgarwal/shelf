@@ -1,6 +1,5 @@
 package com.example.shelf.ui.fragments
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -11,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.example.shelf.R
 import androidx.fragment.app.viewModels
@@ -92,8 +90,13 @@ class SignUp : Fragment() {
                 countries.add(it.data.AM.country)
                 countries.add(it.data.AO.country)
                 countries.add(it.data.AQ.country)
+
+                selectCountry(countries)
             }
         }
+    }
+
+    fun selectCountry(countries: MutableList<String>) {
         val countAdapter = ArrayAdapter(
             requireContext(), R.layout.spinner_text, countries
         )
