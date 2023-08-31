@@ -14,10 +14,9 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.example.shelf.R
 import androidx.fragment.app.viewModels
-import com.example.shelf.databinding.FragmentSignInBinding
 import com.example.shelf.databinding.FragmentSignUpBinding
 import com.example.shelf.ui.activities.MainActivity
-import com.example.shelf.ui.viewModel.mainViewModel
+import com.example.shelf.viewModel.mainViewModel
 
 class SignUp : Fragment() {
     lateinit var binding: FragmentSignUpBinding

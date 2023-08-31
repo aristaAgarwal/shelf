@@ -1,7 +1,7 @@
 package com.example.shelf.network
 
-import com.example.shelf.ui.model.CountryDO
-import com.example.shelf.ui.model.ShelfDO
+import com.example.shelf.model.CountryDO
+import com.example.shelf.model.ShelfDO
 import retrofit2.Response
 import retrofit2.http.GET
 

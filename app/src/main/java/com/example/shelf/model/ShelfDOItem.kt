@@ -7,4 +7,4 @@ data class ShelfDOItem(
     val image: String,
     val lastChapterDate: Int,
     val title: String
-)
+): java.io.Serializable

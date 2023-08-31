@@ -1,5 +1,6 @@
 package com.example.shelf.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +8,8 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shelf.databinding.ActivityMainBinding
 import com.example.shelf.adapter.BooksAdapter
-import com.example.shelf.ui.model.ShelfDOItem
-import com.example.shelf.ui.viewModel.mainViewModel
+import com.example.shelf.model.ShelfDOItem
+import com.example.shelf.viewModel.mainViewModel
 
 class MainActivity : AppCompatActivity(), BooksAdapter.AppLinkClick {
     lateinit var binding: ActivityMainBinding
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity(), BooksAdapter.AppLinkClick {
 
     override fun onAppLinkClicked(p: ShelfDOItem) {
 
+        val intent = Intent(this, BookSummary::class.java)
+        intent.putExtra("bookSummary", p)
+        startActivity(intent)
     }
 
 }

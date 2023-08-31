@@ -5,9 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.shelf.ui.model.CountryDO
-import com.example.shelf.ui.model.ShelfDO
-import com.example.shelf.ui.network.RetrofitService
+import com.example.shelf.model.CountryDO
+import com.example.shelf.model.ShelfDO
+import com.example.shelf.network.RetrofitService
 import kotlinx.coroutines.launch
 
 class mainViewModel : ViewModel() {
