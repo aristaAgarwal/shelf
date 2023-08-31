@@ -34,6 +34,8 @@ class SignUp : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         checkPassword()
         getCountries()
+        if(binding.newName.text.isEmpty())
+        binding.registerBtn.isEnabled = false
         binding.registerBtn.setOnClickListener {
             AppPreferences(requireContext()).setPass(binding.newPassConf.text.toString())
             AppPreferences(requireContext()).setUsername(binding.newName.text.toString())
@@ -87,6 +89,9 @@ class SignUp : Fragment() {
                 Log.e("printing logs", it.toString())
 
                 countries.add(it.data.AF.country)
+                countries.add(it.data.AM.country)
+                countries.add(it.data.AO.country)
+                countries.add(it.data.AQ.country)
             }
         }
         val countAdapter = ArrayAdapter(
